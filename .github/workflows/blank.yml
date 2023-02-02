@@ -23,5 +23,7 @@ jobs:
       - name: Trigger workflow on another repo
         uses: adiechahk/trigger-workflow@master
         env: # Or as an environment variable
-          TKN: ${{ secrets.GHT }}
+          TKN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
 
