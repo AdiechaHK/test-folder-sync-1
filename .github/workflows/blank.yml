@@ -21,6 +21,6 @@ jobs:
     steps:
       - name: Trigger workflow on another repo
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.SEC_TOK }}
         run: |
           gh workflow run blank.yml --repo AdiechaHK/test-folder-sync-2
