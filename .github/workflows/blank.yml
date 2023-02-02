@@ -35,5 +35,5 @@ jobs:
         env: # Or as an environment variable
           TKN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          repo_token: somethingelse
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
 
