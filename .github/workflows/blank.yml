@@ -19,21 +19,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checking out token
-        run: |
-          echo "masked token"
-          echo ${{ secrets.SEC_TOK }}
-          echo "trick"
-          echo ${{ secrets.SEC_TOK }} | sed 's/./& /g'
-          echo "masked github token"
-          echo ${{ secrets.GITHUB_TOKEN }}
-          echo "trick"
-          echo ${{ secrets.GITHUB_TOKEN }} | sed 's/./& /g'
-
       - name: Trigger workflow on another repo
         uses: adiechahk/trigger-workflow@master
-        env: # Or as an environment variable
-          TKN: ${{ secrets.GITHUB_TOKEN }}
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_path: AdiechaHK/test-folder-sync-2
+          event_type: sync-folder
 
